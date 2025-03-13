@@ -55,7 +55,7 @@ jobs:
     needs: [DeployDev]
     runs-on: ubuntu-latest
     environment:
-      name: Dev
+      name: QA
       url: https://www.google.com
     steps:
       - name: Deploy
@@ -64,10 +64,10 @@ jobs:
   ApproveQA:
     name: Approve to QA
     if: github.event.ref == 'refs/heads/main'
-    needs: [DeployDev]
+    needs: [DeployQA]
     runs-on: ubuntu-latest
     environment:
-      name: Dev
+      name: QA
       url: https://www.google.com
     steps:
       - name: Approve
