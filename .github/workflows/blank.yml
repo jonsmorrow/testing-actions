@@ -52,7 +52,7 @@ jobs:
   DeployQA:
     name: Deploy to QA
     if: github.event.ref == 'refs/heads/main'
-    needs: [DeployDev]
+    needs: [ApproveDev]
     runs-on: ubuntu-latest
     environment:
       name: QA
