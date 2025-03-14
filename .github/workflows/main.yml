@@ -36,7 +36,7 @@ jobs:
       url: https://www.google.com
     steps:
       - name: Deploy
-        run: echo Deploy to Dev
+        run: echo Deploy ${{ github.head_ref }}.${{ github.sha }} to Dev
 
   DeployFrontend:
     name: Deploy to Frontend
@@ -48,7 +48,7 @@ jobs:
       url: https://www.google.com
     steps:
       - name: Deploy
-        run: echo Deploy to Frontend
+        run: echo Deploy ${{ github.head_ref }}.${{ github.sha }} to Frontend
 
   DeployTesting:
     name: Deploy to Testing
@@ -60,7 +60,7 @@ jobs:
       url: https://www.google.com
     steps:
       - name: Deploy
-        run: echo Deploy to Testing
+        run: echo Deploy ${{ github.head_ref }}.${{ github.sha }} to Testing
 
   ApproveDev:
     name: Approve Dev
@@ -71,7 +71,7 @@ jobs:
       name: Dev
     steps:
       - name: Deploy
-        run: echo Approving Dev Changes
+        run: echo Approving ${{ github.head_ref }}.${{ github.sha }} Dev Changes
 
   DeployQA:
     name: Deploy to QA
@@ -83,7 +83,7 @@ jobs:
       url: https://www.google.com
     steps:
       - name: Deploy
-        run: echo Deploy to QA
+        run: echo Deploy ${{ github.head_ref }}.${{ github.sha }} to QA
 
   ApproveQA:
     name: Approve QA
@@ -94,7 +94,7 @@ jobs:
       name: QA
     steps:
       - name: Deploy
-        run: echo Approving QA Changes
+        run: echo Approving ${{ github.head_ref }}.${{ github.sha }} QA Changes
 
   DeployWAT:
     name: Deploy to WAT
@@ -106,7 +106,7 @@ jobs:
       url: https://www.google.com
     steps:
       - name: Deploy
-        run: echo Deploy to WAT
+        run: echo Deploy ${{ github.head_ref }}.${{ github.sha }} to WAT
 
   DeployStage:
     name: Deploy to Stage
@@ -118,7 +118,7 @@ jobs:
       url: https://www.google.com
     steps:
       - name: Deploy
-        run: echo Deploy to Stage
+        run: echo Deploy ${{ github.head_ref }}.${{ github.sha }} to Stage
 
   ApproveStage:
     name: Approve Stage
@@ -129,7 +129,7 @@ jobs:
       name: Stage
     steps:
       - name: Deploy
-        run: echo Approving Stage Changes
+        run: echo Approving ${{ github.head_ref }}.${{ github.sha }} Stage Changes
 
   DeployProd:
     name: Deploy to Prod
@@ -141,5 +141,5 @@ jobs:
       url: https://www.google.com
     steps:
       - name: Deploy
-        run: echo Deploy to Prod
+        run: echo Deploy ${{ github.head_ref }}.${{ github.sha }} to Prod
     
