@@ -68,7 +68,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Dev
-      url: https://www.google.com
     steps:
       - name: Deploy
         run: echo Approving Dev Changes
@@ -92,7 +91,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: QA
-      url: https://www.google.com
     steps:
       - name: Deploy
         run: echo Approving QA Changes
@@ -128,7 +126,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Stage
-      url: https://www.google.com
     steps:
       - name: Deploy
         run: echo Approving Stage Changes
