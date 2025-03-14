@@ -28,7 +28,7 @@ jobs:
 
   DeployDev:
     name: Deploy to Dev
-    if: github.event.ref == 'refs/heads/main'
+    # if: github.event.ref == 'refs/heads/main'
     needs: [Build]
     runs-on: ubuntu-latest
     environment:
@@ -40,7 +40,7 @@ jobs:
 
   DeployFrontend:
     name: Deploy to Frontend
-    if: github.event.ref == 'refs/heads/main'
+    # if: github.event.ref == 'refs/heads/main'
     needs: [Build]
     runs-on: ubuntu-latest
     environment:
@@ -52,7 +52,7 @@ jobs:
 
   DeployTesting:
     name: Deploy to Testing
-    if: github.event.ref == 'refs/heads/main'
+    # if: github.event.ref == 'refs/heads/main'
     needs: [Build]
     runs-on: ubuntu-latest
     environment:
@@ -64,7 +64,7 @@ jobs:
 
   ApproveDev:
     name: Approve Dev
-    if: github.event.ref == 'refs/heads/main'
+    # if: github.event.ref == 'refs/heads/main'
     needs: [DeployDev]
     runs-on: ubuntu-latest
     environment:
@@ -75,7 +75,7 @@ jobs:
 
   DeployQA:
     name: Deploy to QA
-    if: github.event.ref == 'refs/heads/main'
+    # if: github.event.ref == 'refs/heads/main'
     needs: [DeployDev, ApproveDev]
     runs-on: ubuntu-latest
     environment:
@@ -87,7 +87,7 @@ jobs:
 
   ApproveQA:
     name: Approve QA
-    if: github.event.ref == 'refs/heads/main'
+    # if: github.event.ref == 'refs/heads/main'
     needs: [DeployQA]
     runs-on: ubuntu-latest
     environment:
@@ -98,7 +98,7 @@ jobs:
 
   DeployWAT:
     name: Deploy to WAT
-    if: github.event.ref == 'refs/heads/main'
+    # if: github.event.ref == 'refs/heads/main'
     needs: [DeployQA, ApproveQA]
     runs-on: ubuntu-latest
     environment:
@@ -110,7 +110,7 @@ jobs:
 
   DeployStage:
     name: Deploy to Stage
-    if: github.event.ref == 'refs/heads/main'
+    # if: github.event.ref == 'refs/heads/main'
     needs: [DeployQA, ApproveQA]
     runs-on: ubuntu-latest
     environment:
@@ -122,7 +122,7 @@ jobs:
 
   ApproveStage:
     name: Approve Stage
-    if: github.event.ref == 'refs/heads/main'
+    # if: github.event.ref == 'refs/heads/main'
     needs: [DeployStage]
     runs-on: ubuntu-latest
     environment:
@@ -133,7 +133,7 @@ jobs:
 
   DeployProd:
     name: Deploy to Prod
-    if: github.event.ref == 'refs/heads/main'
+    # if: github.event.ref == 'refs/heads/main'
     needs: [DeployStage, ApproveStage]
     runs-on: ubuntu-latest
     environment:
